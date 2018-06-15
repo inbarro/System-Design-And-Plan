@@ -1,10 +1,11 @@
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by Noy on 5/20/2018.
  */
-public class CourseCharger extends Observable implements Charger   {
+public class CourseCharger implements Charger   {
     private static CourseCharger courseChargerInstance = null;
 
     private CourseCharger()
@@ -57,5 +58,16 @@ public class CourseCharger extends Observable implements Charger   {
     @Override
     public void updateDB(String type, int id, Object New) {
 
+    }
+
+
+    public String CoursenameToID(String coursename){
+        List<HashMap<String, String>> a = DBUtils.executeQuery(String.format(String.format("Select * from course where name = '%s'; ",coursename)));
+        String id =  a.get(0).get("id");
+        return id;
+    }
+
+    public List<HashMap<String, String>> seeCourses(String id) {
+        return DBUtils.executeQuery(String.format("Select name from course where incharge = '%s'; ",id));
     }
 }

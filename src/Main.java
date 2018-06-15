@@ -7,12 +7,16 @@ import java.util.List;
 
 public class Main  {
     public static void main (String[]args) throws Exception {
-        System.out.println("hello there");
-        UserCharger UC = UserCharger.getInstance();
-        CourseCharger CC = CourseCharger.getInstance();
-        QuestionCharger QC = QuestionCharger.getInstance();
-        DBUtils DB = DBUtils.getInstance();
-        List<HashMap<String,Object>> list = DBUtils.executeQuery("select * from users;");
+        System.out.println("Starting the app...");
+        Controller c = new Controller();
+        View v= new View();
+        Model m = new Model();
+        m.SetController(c);
+        c.setModel(m);
+        c.setView(v);
+        v.setController(c);
+
+        v.Start();
 
     }
 }

@@ -1,10 +1,5 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.HashMap;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,29 +33,33 @@ public class DBUtils {
         return DBUtilsInstance;
     }
 
-    public static List<HashMap<String,Object>> executeQuery(String query)
+    public static List<HashMap<String,String>> executeQuery(String query)
     {
+        System.out.println(query);
         try {
             return convertResultSetToList(stat.executeQuery(query));
         }
         catch (Exception e)
         {
-            System.out.println("There was an error when executing " + query);
+            if(!e.toString().contains("query does not return ResultSet")) {
+                System.out.println("There was an error when executing " + query);
+                e.printStackTrace();
+            }
         }
 
         return null;
 
     }
 
-    public static List<HashMap<String,Object>> convertResultSetToList(ResultSet rs) throws SQLException {
+    public static List<HashMap<String,String>> convertResultSetToList(ResultSet rs) throws SQLException {
         ResultSetMetaData md = rs.getMetaData();
         int columns = md.getColumnCount();
-        List<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();
+        List<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
 
         while (rs.next()) {
-            HashMap<String,Object> row = new HashMap<String, Object>(columns);
+            HashMap<String,String> row = new HashMap<String, String>(columns);
             for(int i=1; i<=columns; ++i) {
-                row.put(md.getColumnName(i),rs.getObject(i));
+                row.put(md.getColumnName(i),rs.getObject(i).toString());
             }
             list.add(row);
         }
