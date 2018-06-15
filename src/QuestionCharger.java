@@ -4,23 +4,23 @@ import java.util.List;
 /**
  * Created by Noy on 5/20/2018.
  */
-public class QuestionController extends Controller {
-    private static QuestionController QuestionControllerInstance = null;
+public class QuestionCharger extends Observable implements Charger {
+    private static QuestionCharger questionChargerInstance = null;
 
     questions question ;
 
     //Constructor
-    private QuestionController()
+    private QuestionCharger()
     {
-        System.out.println("Building QuestionController for the first time...");
+        System.out.println("Building QuestionCharger for the first time...");
     }
 
-    public static QuestionController getInstance()
+    public static QuestionCharger getInstance()
     {
-        if (QuestionControllerInstance == null)
-            QuestionControllerInstance = new QuestionController();
+        if (questionChargerInstance == null)
+            questionChargerInstance = new QuestionCharger();
 
-        return QuestionControllerInstance;
+        return questionChargerInstance;
     }
 
 
@@ -46,4 +46,19 @@ public class QuestionController extends Controller {
         return  q ;
     }
     public void editOptions (int courseID, int OptionID, String newOption){}
+
+    @Override
+    public void saveToDB(String type, Object o) {
+
+    }
+
+    @Override
+    public void deleteFromDB(String type, int ID) {
+
+    }
+
+    @Override
+    public void updateDB(String type, int id, Object New) {
+
+    }
 }

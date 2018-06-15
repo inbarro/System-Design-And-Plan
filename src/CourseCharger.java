@@ -4,20 +4,20 @@ import java.util.List;
 /**
  * Created by Noy on 5/20/2018.
  */
-public class CourseController extends Controller {
-    private static CourseController CourseControllerInstance = null;
+public class CourseCharger extends Observable implements Charger   {
+    private static CourseCharger courseChargerInstance = null;
 
-    private CourseController()
+    private CourseCharger()
     {
-        System.out.println("Building CourseController for the first time...");
+        System.out.println("Building CourseCharger for the first time...");
     }
 
-    public static CourseController getInstance()
+    public static CourseCharger getInstance()
     {
-        if (CourseControllerInstance == null)
-            CourseControllerInstance = new CourseController();
+        if (courseChargerInstance == null)
+            courseChargerInstance = new CourseCharger();
 
-        return CourseControllerInstance;
+        return courseChargerInstance;
     }
 
     course course;
@@ -44,4 +44,18 @@ public class CourseController extends Controller {
     }
 
 
+    @Override
+    public void saveToDB(String type, Object o) {
+
+    }
+
+    @Override
+    public void deleteFromDB(String type, int ID) {
+
+    }
+
+    @Override
+    public void updateDB(String type, int id, Object New) {
+
+    }
 }
