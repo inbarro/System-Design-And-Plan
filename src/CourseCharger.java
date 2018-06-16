@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,9 +8,15 @@ import java.util.List;
  */
 public class CourseCharger implements Charger   {
     private static CourseCharger courseChargerInstance = null;
+    List<course> courses;
+
 
     private CourseCharger()
     {
+        courses = new ArrayList<>();
+        List<HashMap<String, String>> result = DBUtils.executeQuery(String.format("select * from course;"));
+        for(int i =0 ; i<result.size();i++)
+            courses.add(new course(result.get(i).get("name"),result.get(i).get("ProfessorID"),result.get(i).get("Sylbaus"),result.get(i).get("crew"),result.get(i).get("incharge"),result.get(i).get("id")));
         System.out.println("Building CourseCharger for the first time...");
     }
 
@@ -21,7 +28,6 @@ public class CourseCharger implements Charger   {
         return courseChargerInstance;
     }
 
-    course course;
 
     public List<questions> getQuestionFromCourse (int courseID){
         List<questions> q = new LinkedList<>();
@@ -60,14 +66,47 @@ public class CourseCharger implements Charger   {
 
     }
 
-
     public String CoursenameToID(String coursename){
         List<HashMap<String, String>> a = DBUtils.executeQuery(String.format(String.format("Select * from course where name = '%s'; ",coursename)));
         String id =  a.get(0).get("id");
         return id;
     }
 
-    public List<HashMap<String, String>> seeCourses(String id) {
-        return DBUtils.executeQuery(String.format("Select name from course where incharge = '%s'; ",id));
+    public course getCourse(String CourseID){
+        for(int i = 0;i<courses.size();i++)
+            if(courses.get(i).ID.equals(CourseID))
+                return courses.get(i);
+
+        return null;
+    }
+
+    public void setMaagar(course course, questionBank maagar) {
+        for(int i = 0;i<courses.size();i++)
+            if(courses.get(i).ID.equals(course.ID))
+                courses.get(i).maagarID = maagar;
+    }
+
+    public course CoursesInCharge(String id) {
+        course c = null;
+        for(int i =0;i<courses.size();i++)
+            if(courses.get(i).incharge.equals(id))
+                c =  courses.get(i);
+
+        return c;
+    }
+
+    public course CoursesInCrew(String id) {
+        course c = null;
+        for(int i = 0;i<courses.size();i++)
+            if(courses.get(i).crew.contains(id))
+                c =  courses.get(i);
+        return c;
+    }
+
+    public void WriteSyllabus(course courseInCharge,String syllabus) {
+        courseInCharge.sylabus = syllabus;
+        DBUtils.executeQuery(String.format("Update course set Sylbaus = '%s' where id = '%s';",syllabus,courseInCharge.ID));
     }
 }
+
+

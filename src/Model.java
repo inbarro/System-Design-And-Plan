@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.List;
 
 public class Model {
@@ -6,6 +5,7 @@ public class Model {
     CourseCharger CC;
     QuestionCharger QC;
     Controller c;
+    user LoggedUser;
 
     public Model() {
          UC = UserCharger.getInstance();
@@ -18,23 +18,43 @@ public class Model {
         this.c = c;
     }
 
-    public boolean Login(String username, String password) {
-        return UC.Login(username,password);
+    public user Login(String username, String password) {
+        LoggedUser = UC.Login(username,password);
+        return LoggedUser;
     }
 
-    public List<HashMap<String, String>> seeCourses(String username) {
-        String id = UC.UsernameToID(username);
-        return CC.seeCourses(id);
-    }
 
-    public List<HashMap<String,String>> seeQuestionsOfCourse(String coursename) {
-        String id = CC.CoursenameToID(coursename);
-        return QC.QuestionsOfCourse(id);
+
+    public List<questions> seeQuestionsOfCourse(course course) {
+        questionBank maagar = QC.getMaagar(course);
+        CC.setMaagar(course,maagar);
+        return QC.QuestionsOfCourse(maagar);
     }
 
     public void DeleteQuestion(String question) {
         QC.DeleteQuestion(question);
 
+    }
+
+    public course CoursesInCharge(user username) {
+        return CC.CoursesInCharge(username.ID);
+    }
+
+    public course CoursesInCrew(user user) {
+        return CC.CoursesInCrew(user.ID);
+
+    }
+
+    public void AddNoteToQuestion(questions question,String note) {
+        QC.AddNoteToQuestion(question,note,LoggedUser);
+    }
+
+    public void WriteSyllabus(course courseInCharge,String s) {
+        CC.WriteSyllabus(courseInCharge,s);
+    }
+
+    public void WriteQuestion(course courseInCrew,String body) {
+        QC.WriteQuestion(courseInCrew,body,LoggedUser.UserName);
     }
 }
 

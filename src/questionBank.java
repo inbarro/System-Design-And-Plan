@@ -1,17 +1,25 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class questionBank
 {
-   double AverageDifficult,AverageEstimatedTime;
+   String AverageDifficult,AverageEstimatedTime,id;
+   List<questions> questions;
+   course course;
 
-    LinkedList<questions> questions;
-    course course;
+    public questionBank(String averageDifficult, String averageEstimatedTime, String id, course course) {
+        AverageDifficult = averageDifficult;
+        AverageEstimatedTime = averageEstimatedTime;
+        this.id = id;
+        this.questions = new ArrayList<>();
+        this.course = course;
+    }
 
-    public double calculateAverageDifficult(){
+    public String calculateAverageDifficult(){
         return AverageDifficult;
     }
-    public double calculateAverageEstimatedTime(){
+    public String calculateAverageEstimatedTime(){
         return  AverageEstimatedTime;
     }
     public void addQuestion(){}

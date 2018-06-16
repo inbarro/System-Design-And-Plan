@@ -35,7 +35,6 @@ public class DBUtils {
 
     public static List<HashMap<String,String>> executeQuery(String query)
     {
-        System.out.println(query);
         try {
             return convertResultSetToList(stat.executeQuery(query));
         }

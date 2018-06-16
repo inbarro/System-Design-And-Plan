@@ -3,8 +3,19 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class course {
-    String name, info, sylabus;
-    int ID;
+    String name,ProfesorID, sylabus,crew,incharge,ID;
+    questionBank maagarID;
+
+    public course(String name, String profesorID, String sylabus, String crew, String incharge, String ID) {
+        this.name = name;
+        ProfesorID = profesorID;
+        this.sylabus = sylabus;
+        this.crew = crew;
+        this.incharge = incharge;
+        this.ID = ID;
+        this.maagarID = null;
+    }
+    /*
     questionBank questionBank;
     LinkedList<semester> semesters;
     Department department;
@@ -12,6 +23,7 @@ public class course {
     LinkedList<CourseStaffStatus> courseStaffStatus;
     LinkedList<EducationAssistant> educationAssistants;
     LinkedList<Test> tests;
+    */
 
     public boolean isDateHasSet(int moed) {
         return false;

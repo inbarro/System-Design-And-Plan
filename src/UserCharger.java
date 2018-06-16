@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,9 +8,25 @@ import java.util.List;
  */
 public class UserCharger implements Charger {
     private static UserCharger userChargerInstance = null;
+    List<user> users;
 
     private UserCharger()
     {
+        users = new ArrayList<>();
+        DBUtils.getInstance();
+        List<HashMap<String, String>> result = DBUtils.executeQuery(String.format("select * from users;"));
+        for(int i = 0 ; i<result.size();i++)
+        {
+            List<HashMap<String, String>> result1 = DBUtils.executeQuery(String.format("select * from roles where userID ='%s';",result.get(i).get("id")));
+            String role = result1.get(0).get("role");
+                if(role.equals("CourseManager"))
+                    users.add(new CourseManager(result.get(i).get("last_name"), result.get(i).get("first_name"), result.get(i).get("user_name"), result.get(i).get("address"), result.get(i).get("phone"), result.get(i).get("email"), result.get(i).get("password"), result.get(i).get("id")));
+                if(role.equals("Student"))
+                    users.add(new student(result.get(i).get("last_name"), result.get(i).get("first_name"), result.get(i).get("user_name"), result.get(i).get("address"), result.get(i).get("phone"), result.get(i).get("email"), result.get(i).get("password"), result.get(i).get("id")));
+                if(role.equals("tutor"))
+                    users.add(new tutor(result.get(i).get("last_name"), result.get(i).get("first_name"), result.get(i).get("user_name"), result.get(i).get("address"), result.get(i).get("phone"), result.get(i).get("email"), result.get(i).get("password"), result.get(i).get("id")));
+
+        }
 
         System.out.println("Building UserCharger for the first time...");
     }
@@ -51,9 +68,13 @@ public class UserCharger implements Charger {
         return id;
     }
 
-    public boolean Login(String username, String password) {
-        DBUtils.getInstance();
-        List<HashMap<String, String>> result = DBUtils.executeQuery(String.format("select * from users where user_name = '%s' and password = '%s'; ",username,password));
-        return result.size()>0;
+    public user Login(String username, String password) {
+        user TempUser = null;
+
+        for(int i =0; i<users.size();i++)
+            if(users.get(i).UserName.equals(username) && users.get(i).Password.equals(password))
+                TempUser = users.get(i);
+
+        return TempUser;
     }
 }

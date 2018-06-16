@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.List;
 
 public class Controller {
@@ -19,19 +18,36 @@ public class Controller {
         this.View = View;
     }
 
-    public boolean Login(String username, String password) {
+    public user Login(String username, String password) {
         return model.Login(username,password);
     }
 
-    public List<HashMap<String, String>> seeCourses(String username) {
-        return model.seeCourses(username);
+    public course CoursesInCharge(user username) {
+        return model.CoursesInCharge(username);
     }
 
-    public List<HashMap<String,String>> seeQuestionsOfCourse(String coursename) {
-        return model.seeQuestionsOfCourse(coursename);
+    public List<questions> seeQuestionsOfCourse(course course) {
+        return model.seeQuestionsOfCourse(course);
     }
 
-    public void DeleteQuestion(String question) {
-        model.DeleteQuestion(question);
+    public void DeleteQuestion(List<questions> qList,int question) {
+        model.DeleteQuestion(qList.get(question).body);
+    }
+
+    public course CoursesInCrew(user user) {
+        return model.CoursesInCrew(user);
+
+    }
+
+    public void AddNoteToQuestion(List<questions> qList, int i,String note) {
+        model.AddNoteToQuestion(qList.get(i),note);
+    }
+
+    public void WriteSyllabus(course courseInCharge,String s) {
+        model.WriteSyllabus(courseInCharge,s);
+    }
+
+    public void WriteQuestion(course courseInCrew,String body) {
+        model.WriteQuestion(courseInCrew,body);
     }
 }

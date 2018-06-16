@@ -1,6 +1,9 @@
-public abstract class CourseStaff extends user{
+public class CourseStaff extends user{
 
-    CourseStaff courseStaff;
+
+    public CourseStaff(String lastName, String firstName, String userName, String adress, String phone, String email, String password, String ID) {
+        super(lastName, firstName, userName, adress, phone, email, password, ID);
+    }
 
     public void CallStudents(){}
     public void createSlides(){}
