@@ -46,7 +46,7 @@ public class View {
         GridPane.setConstraints(loginbutton, 2, 3);
         loginbutton.setOnAction(e->guiLogin(usernameInput.getText(),passwordInput.getText()));
         grid.getChildren().addAll(welcomeLabel, usernameLabel,passwordLabel,usernameInput,passwordInput,loginbutton);
-        Scene scene = new Scene(grid, 500, 300);
+        Scene scene = new Scene(grid, 600, 300);
         scene.getStylesheets().add("Style.css");
         window.setScene(scene);
         window.show();
@@ -92,6 +92,7 @@ public class View {
         questionWindow.setTitle("Insert Question");
         questionWindow.setMinWidth(250);
         Scene scene = new Scene(grid, 500, 300);
+        scene.getStylesheets().add("Style.css");
         questionWindow.setScene(scene);
         questionWindow.show();
     }
@@ -126,6 +127,7 @@ public class View {
         syllabusWindow.setTitle("Insert syllabus");
         syllabusWindow.setMinWidth(250);
         Scene scene = new Scene(grid, 500, 300);
+        scene.getStylesheets().add("Style.css");
         syllabusWindow.setScene(scene);
         syllabusWindow.show();
     }
@@ -204,7 +206,7 @@ public class View {
         GridPane.setConstraints(delete, 1, 3);
         delete.setOnAction(e->deleteQuestion(list2.getValue(),list2));
         grid.getChildren().addAll(header,delete,list2);
-        noteWindow.setTitle("Notes");
+        noteWindow.setTitle("Delete question");
         Scene scene = new Scene(grid, 500, 300);
         scene.getStylesheets().add("Style.css");
         noteWindow.setScene(scene);
@@ -320,7 +322,8 @@ public class View {
 
         mivanetwindow.setTitle("Mivhanet");
         mivanetwindow.setMinWidth(250);
-        Scene scene = new Scene(grid, 500, 300);
+        Scene scene = new Scene(grid, 600, 300);
+        scene.getStylesheets().add("Style.css");
         mivanetwindow.setScene(scene);
         mivanetwindow.show();
     }
