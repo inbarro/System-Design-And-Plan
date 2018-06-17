@@ -2,55 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad02255f-198f-4865-b39b-55fbf49ebebb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LoginGui.fxml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB_Nituz.db" afterPath="$PROJECT_DIR$/DB_Nituz.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/AcionReport.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/AcionReport.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/Charger.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Charger.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/Controller.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/CourseCharger.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/CourseCharger.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/CourseManager.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/CourseManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/CourseStaff.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/CourseStaff.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/CourseStaffStatus.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/CourseStaffStatus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/DBUtils.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/DBUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/Department.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Department.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/EducationAssistant.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/EducationAssistant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/ErrorReport.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/ErrorReport.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/Main.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/Model.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Model.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/Nituz.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Nituz.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/QuestionCharger.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/QuestionCharger.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/QuestionInTest.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/QuestionInTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/SecretaryPlace.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/SecretaryPlace.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/Test.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/TestForm.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/TestForm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/UserCharger.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/UserCharger.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/View.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/View.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/ab.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/ab.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/answer.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/answer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/choise.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/choise.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/course.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/course.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/grade.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/grade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/inter.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/inter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/lecturer.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/lecturer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/logger.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/logger.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/loggerActions.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/loggerActions.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/loggerError.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/loggerError.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/note.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/note.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/questionBank.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/questionBank.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/questions.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/questions.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/report.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/report.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/secretary.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/secretary.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/semester.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/semester.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/student.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/student.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/tutor.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/tutor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CourseSystem/user.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/user.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller.java" afterPath="$PROJECT_DIR$/src/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CourseCharger.java" afterPath="$PROJECT_DIR$/src/CourseCharger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model.java" afterPath="$PROJECT_DIR$/src/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View.java" afterPath="$PROJECT_DIR$/src/View.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
+            <state relative-caret-position="3155">
               <caret line="290" column="21" lean-forward="true" selection-start-line="290" selection-start-column="21" selection-end-line="290" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -207,7 +159,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBUtils.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DBUtils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="858">
@@ -459,12 +411,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529226124411</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="done 3 usecase login insert syllabus insert question GUI">
+      <created>1529240382947</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1529240382947</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -479,7 +437,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -499,7 +457,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added login controoler file" />
-    <option name="LAST_COMMIT_MESSAGE" value="added login controoler file" />
+    <MESSAGE value="done 3 usecase login insert syllabus insert question GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="done 3 usecase login insert syllabus insert question GUI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -922,25 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="290" column="21" lean-forward="true" selection-start-line="290" selection-start-column="21" selection-end-line="290" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#WriteNoteForQuestion#0;class#View#0" expanded="false" />
-            <element signature="method#DeleteQuestionOption#0;class#View#0" expanded="false" />
-            <element signature="method#PrintOptions#0;class#View#0" expanded="false" />
-            <element signature="method#PrintCourses#0;class#View#0" expanded="false" />
-            <element signature="method#PrintColor#0;class#View#0" expanded="false" />
-            <element signature="method#PrintQuestions#0;class#View#0" expanded="false" />
-            <element signature="method#submitQuestion#0;class#View#0" expanded="false" />
-            <element signature="method#showAlert#0;class#View#0" expanded="false" />
-            <element signature="method#toComboList#0;class#View#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -1003,6 +943,25 @@
           <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3155">
+          <caret line="290" column="21" lean-forward="true" selection-start-line="290" selection-start-column="21" selection-end-line="290" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#WriteNoteForQuestion#0;class#View#0" expanded="false" />
+            <element signature="method#DeleteQuestionOption#0;class#View#0" expanded="false" />
+            <element signature="method#PrintOptions#0;class#View#0" expanded="false" />
+            <element signature="method#PrintCourses#0;class#View#0" expanded="false" />
+            <element signature="method#PrintColor#0;class#View#0" expanded="false" />
+            <element signature="method#PrintQuestions#0;class#View#0" expanded="false" />
+            <element signature="method#submitQuestion#0;class#View#0" expanded="false" />
+            <element signature="method#showAlert#0;class#View#0" expanded="false" />
+            <element signature="method#toComboList#0;class#View#0" expanded="false" />
           </folding>
         </state>
       </provider>
