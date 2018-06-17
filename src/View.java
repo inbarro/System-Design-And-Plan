@@ -20,16 +20,17 @@ public class View {
     String username;
     List<course> courseInCharge;
     List<course> courseInCrew;
+    List<questions> qList;
 
 
     public void Start(Stage primaryStage) {
         window = primaryStage;
         window.setTitle("Welcome ! ");
+
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(10, 10, 10, 10));
         grid.setVgap(8);
         grid.setHgap(10);
-
         Label welcomeLabel =new Label("Login here:");
         GridPane.setConstraints(welcomeLabel, 0, 0);
         Label usernameLabel = new Label("Enter user name:");
@@ -47,6 +48,7 @@ public class View {
         loginbutton.setOnAction(e->guiLogin(usernameInput.getText(),passwordInput.getText()));
         grid.getChildren().addAll(welcomeLabel, usernameLabel,passwordLabel,usernameInput,passwordInput,loginbutton);
         Scene scene = new Scene(grid, 500, 300);
+        scene.getStylesheets().add("Style.css");
         window.setScene(scene);
         window.show();
     }
@@ -69,7 +71,6 @@ public class View {
         }
         ObservableList<String> olist= FXCollections.observableArrayList(questionBody);
         ListView<String> list2 = new ListView<>(olist);
-
         Stage questionWindow = new Stage();
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(10, 10, 10, 10));
@@ -80,7 +81,6 @@ public class View {
         Label currentQuestion =new Label("Here are the current course questions");
         GridPane.setConstraints(currentQuestion, 0, 1);
         GridPane.setConstraints(list2, 0, 2);
-
         Label insertQuestion =new Label("Please insert your new question here:");
         GridPane.setConstraints(insertQuestion, 0, 3);
         TextField questionInput= new TextField();
@@ -131,21 +131,46 @@ public class View {
         syllabusWindow.show();
     }
 
-    private void WriteNoteForQuestion(course courseInCrew) {
-        PrintColor("You can add notes for questions from the course " + courseInCrew.name);
-        List<questions> qList = c.seeQuestionsOfCourse(courseInCrew);
-        if (qList.size() > 0) {
-            PrintQuestions(qList);
-            PrintColor("Please enter a Question index to add note");
-            int question = reader.nextInt();
-            System.out.println("Please enter the note");
-            reader.nextLine();
-            String note = reader.nextLine();
-            c.AddNoteToQuestion(qList, question - 1,note);
-        } else {
-            System.out.print("There are no questions");
+    private void WriteNoteForQuestion(String courseName)
+    {
+        if(courseName==null||courseName.equals(""))
+        {
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Error");
+            alert.setContentText("Please choose a course from the courses you are in their crew");
+            alert.show();
+            return;
         }
-
+        Stage noteWindow = new Stage();
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(8);
+        grid.setHgap(10);
+        course cCrew=getCourseByName(courseName,courseInCrew);
+        qList = c.seeQuestionsOfCourse(cCrew);
+        List<String> questionBody = new ArrayList<>();
+        for(questions question : qList){
+            questionBody.add(question.body);
+        }
+        ObservableList<String> olist= FXCollections.observableArrayList(questionBody);
+        ComboBox<String> list2 = new ComboBox<>(olist);
+        Label header= new Label("Please choose a Question to add a note to:");
+        GridPane.setConstraints(header, 0, 0);
+        GridPane.setConstraints(list2, 0, 1);
+        TextField noteInput= new TextField();
+        noteInput.setPromptText("note...");
+        Label noteLabel= new Label("Please insert a note :");
+        GridPane.setConstraints(noteLabel, 0, 3);
+        GridPane.setConstraints(noteInput, 0, 4);
+        Button submit = new Button("Submit note");
+        GridPane.setConstraints(submit, 1, 5);
+        submit.setOnAction(e->addNote(list2.getValue(),noteInput.getText(),noteInput));
+        grid.getChildren().addAll(header, noteInput,submit,list2,noteLabel);
+        noteWindow.setTitle("Notes");
+        Scene scene = new Scene(grid, 500, 300);
+        scene.getStylesheets().add("Style.css");
+        noteWindow.setScene(scene);
+        noteWindow.show();
     }
 
 
@@ -238,7 +263,7 @@ public class View {
         grid.setPadding(new Insets(10, 10, 10, 10));
         grid.setVgap(8);
         grid.setHgap(10);
-        Label loggedLabel =new Label("Hello:"+username);
+        Label loggedLabel =new Label("Hello: "+username);
         GridPane.setConstraints(loggedLabel, 0, 0);
         Label courseincharegLabel=null;
         Label courseincrewLabel=null;
@@ -255,15 +280,18 @@ public class View {
             GridPane.setConstraints(courseInCrew, 0, 4);
         }
         Button enterSylabus = new Button("Enter new syllabus");
-        GridPane.setConstraints(enterSylabus, 2, 5);
+        GridPane.setConstraints(enterSylabus, 2, 2);
         Button enterQuestion = new Button("Enter new question");
-        GridPane.setConstraints(enterQuestion, 2, 6);
+        GridPane.setConstraints(enterQuestion, 2, 4);
+        Button addNoteQuestion = new Button("Add note to question");
+        GridPane.setConstraints(addNoteQuestion, 3, 4);
         enterQuestion.setOnAction(e->WriteQuestion(courseInCrew.getValue()));
+        addNoteQuestion.setOnAction(e->WriteNoteForQuestion(courseInCrew.getValue()));
         enterSylabus.setOnAction(e->WriteSyllabus(courseInCharge.getValue()));
         grid.getChildren().addAll(loggedLabel,courseincharegLabel,courseincrewLabel,enterSylabus,enterQuestion
-                ,courseInCharge,courseInCrew);
+                ,courseInCharge,courseInCrew,addNoteQuestion);
 
-        mivanetwindow.setTitle("Mivanet");
+        mivanetwindow.setTitle("Mivhanet");
         mivanetwindow.setMinWidth(250);
         Scene scene = new Scene(grid, 500, 300);
         mivanetwindow.setScene(scene);
@@ -308,8 +336,10 @@ public class View {
         alert.showAndWait();
     }
     private ComboBox<String> toComboList(List<course>courses){
-        if(courses==null)
-            return null;
+        if(courses==null) {
+            ComboBox<String> listview=new ComboBox<>();
+            return listview;
+        }
         List<String> result=new ArrayList<>();
         for(course course : courses){
             result.add(course.name);
@@ -326,5 +356,29 @@ public class View {
                 return courses.get(i);
         }
         return null;
+    }
+    private void addNote(String que, String note,TextField t)
+    {
+        questions questionAddNote=null;
+        for(int i=0; i<qList.size();i++)
+        {
+            if(qList.get(i).body.equals(que))
+                questionAddNote= qList.get(i);
+        }
+        if(questionAddNote==null||note.equals(""))
+        {
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Error");
+            alert.setContentText("Please select a question and insert a valid note");
+            alert.show();
+            return;
+        }
+
+        c.AddNoteToQuestion(questionAddNote,note);
+        showAlert("note");
+        Stage stage = (Stage) t.getScene().getWindow();
+        stage.close();
+
+
     }
 }

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad02255f-198f-4865-b39b-55fbf49ebebb" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB_Nituz.db" afterPath="$PROJECT_DIR$/DB_Nituz.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller.java" afterPath="$PROJECT_DIR$/src/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View.java" afterPath="$PROJECT_DIR$/src/View.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +23,8 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+            <state relative-caret-position="238">
+              <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
               <folding>
                 <element signature="e#345#346#0" expanded="true" />
                 <element signature="e#398#399#0" expanded="true" />
@@ -29,10 +32,12 @@
                 <element signature="e#510#511#0" expanded="true" />
                 <element signature="e#576#577#0" expanded="true" />
                 <element signature="e#633#634#0" expanded="true" />
-                <element signature="e#1068#1069#0" expanded="true" />
-                <element signature="e#1121#1122#0" expanded="true" />
-                <element signature="e#1187#1188#0" expanded="true" />
-                <element signature="e#1241#1242#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+                <element signature="e#975#976#0" expanded="true" />
+                <element signature="e#1040#1041#0" expanded="true" />
+                <element signature="e#1093#1094#0" expanded="true" />
+                <element signature="e#1159#1160#0" expanded="true" />
+                <element signature="e#1213#1214#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,20 +62,31 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3155">
-              <caret line="290" column="21" lean-forward="true" selection-start-line="290" selection-start-column="21" selection-end-line="290" selection-end-column="21" />
+            <state relative-caret-position="2913">
+              <caret line="173" column="5" lean-forward="true" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#WriteNoteForQuestion#0;class#View#0" expanded="false" />
+                <element signature="method#WriteSyllabus#0;class#View#0" expanded="false" />
                 <element signature="method#DeleteQuestionOption#0;class#View#0" expanded="false" />
                 <element signature="method#PrintOptions#0;class#View#0" expanded="false" />
                 <element signature="method#PrintCourses#0;class#View#0" expanded="false" />
                 <element signature="method#PrintColor#0;class#View#0" expanded="false" />
                 <element signature="method#PrintQuestions#0;class#View#0" expanded="false" />
-                <element signature="method#submitQuestion#0;class#View#0" expanded="false" />
-                <element signature="method#showAlert#0;class#View#0" expanded="false" />
+                <element signature="method#guiLogin#0;class#View#0" expanded="false" />
+                <element signature="method#loginView#0;class#View#0" expanded="false" />
                 <element signature="method#toComboList#0;class#View#0" expanded="false" />
+                <element signature="method#getCourseByName#0;class#View#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,16 +109,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="66">
               <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="note.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/note.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -189,6 +195,7 @@
       <find>WriteSyllabus</find>
       <find>info</find>
       <find>listview</find>
+      <find>setTitle</find>
     </findStrings>
     <replaceStrings>
       <replace>PrintColor</replace>
@@ -224,9 +231,10 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/loginController.java" />
         <option value="$PROJECT_DIR$/src/Model.java" />
+        <option value="$PROJECT_DIR$/src/CourseCharger.java" />
+        <option value="$PROJECT_DIR$/Style.css" />
         <option value="$PROJECT_DIR$/src/Controller.java" />
         <option value="$PROJECT_DIR$/src/View.java" />
-        <option value="$PROJECT_DIR$/src/CourseCharger.java" />
       </list>
     </option>
   </component>
@@ -418,11 +426,19 @@
       <option name="project" value="LOCAL" />
       <updated>1529240382947</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="done 3 usecase login insert syllabus insert question GUI">
+      <created>1529240661341</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1529240661341</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -437,7 +453,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -451,6 +467,9 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -484,7 +503,7 @@
           <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="57" />
+      <option name="time" value="58" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -514,10 +533,12 @@
             <element signature="e#510#511#0" expanded="true" />
             <element signature="e#576#577#0" expanded="true" />
             <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#1068#1069#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1040#1041#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1159#1160#0" expanded="true" />
+            <element signature="e#1213#1214#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -552,15 +573,16 @@
           <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#WriteNoteForQuestion#0;class#View#0" expanded="false" />
+            <element signature="method#WriteSyllabus#0;class#View#0" expanded="false" />
             <element signature="method#DeleteQuestionOption#0;class#View#0" expanded="false" />
             <element signature="method#PrintOptions#0;class#View#0" expanded="false" />
             <element signature="method#PrintCourses#0;class#View#0" expanded="false" />
             <element signature="method#PrintColor#0;class#View#0" expanded="false" />
             <element signature="method#PrintQuestions#0;class#View#0" expanded="false" />
-            <element signature="method#submitQuestion#0;class#View#0" expanded="false" />
-            <element signature="method#showAlert#0;class#View#0" expanded="false" />
+            <element signature="method#guiLogin#0;class#View#0" expanded="false" />
+            <element signature="method#loginView#0;class#View#0" expanded="false" />
             <element signature="method#toComboList#0;class#View#0" expanded="false" />
+            <element signature="method#getCourseByName#0;class#View#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -624,10 +646,12 @@
             <element signature="e#510#511#0" expanded="true" />
             <element signature="e#576#577#0" expanded="true" />
             <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#1068#1069#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1040#1041#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1159#1160#0" expanded="true" />
+            <element signature="e#1213#1214#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -661,15 +685,16 @@
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#WriteNoteForQuestion#0;class#View#0" expanded="false" />
+            <element signature="method#WriteSyllabus#0;class#View#0" expanded="false" />
             <element signature="method#DeleteQuestionOption#0;class#View#0" expanded="false" />
             <element signature="method#PrintOptions#0;class#View#0" expanded="false" />
             <element signature="method#PrintCourses#0;class#View#0" expanded="false" />
             <element signature="method#PrintColor#0;class#View#0" expanded="false" />
             <element signature="method#PrintQuestions#0;class#View#0" expanded="false" />
-            <element signature="method#submitQuestion#0;class#View#0" expanded="false" />
-            <element signature="method#showAlert#0;class#View#0" expanded="false" />
+            <element signature="method#guiLogin#0;class#View#0" expanded="false" />
+            <element signature="method#loginView#0;class#View#0" expanded="false" />
             <element signature="method#toComboList#0;class#View#0" expanded="false" />
+            <element signature="method#getCourseByName#0;class#View#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -881,25 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
-          <folding>
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#1068#1069#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -947,21 +953,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding>
+            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#510#511#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1040#1041#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1159#1160#0" expanded="true" />
+            <element signature="e#1213#1214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3155">
-          <caret line="290" column="21" lean-forward="true" selection-start-line="290" selection-start-column="21" selection-end-line="290" selection-end-column="21" />
+        <state relative-caret-position="2913">
+          <caret line="173" column="5" lean-forward="true" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#WriteNoteForQuestion#0;class#View#0" expanded="false" />
+            <element signature="method#WriteSyllabus#0;class#View#0" expanded="false" />
             <element signature="method#DeleteQuestionOption#0;class#View#0" expanded="false" />
             <element signature="method#PrintOptions#0;class#View#0" expanded="false" />
             <element signature="method#PrintCourses#0;class#View#0" expanded="false" />
             <element signature="method#PrintColor#0;class#View#0" expanded="false" />
             <element signature="method#PrintQuestions#0;class#View#0" expanded="false" />
-            <element signature="method#submitQuestion#0;class#View#0" expanded="false" />
-            <element signature="method#showAlert#0;class#View#0" expanded="false" />
+            <element signature="method#guiLogin#0;class#View#0" expanded="false" />
+            <element signature="method#loginView#0;class#View#0" expanded="false" />
             <element signature="method#toComboList#0;class#View#0" expanded="false" />
+            <element signature="method#getCourseByName#0;class#View#0" expanded="false" />
           </folding>
         </state>
       </provider>

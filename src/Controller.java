@@ -39,8 +39,8 @@ public class Controller {
 
     }
 
-    public void AddNoteToQuestion(List<questions> qList, int i,String note) {
-        model.AddNoteToQuestion(qList.get(i),note);
+    public void AddNoteToQuestion(questions q,String note) {
+        model.AddNoteToQuestion(q,note);
     }
 
     public void WriteSyllabus(course courseInCharge,String s) {
