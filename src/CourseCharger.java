@@ -86,21 +86,21 @@ public class CourseCharger implements Charger   {
                 courses.get(i).maagarID = maagar;
     }
 
-    public course CoursesInCharge(String id) {
-        course c = null;
+    public List<course> CoursesInCharge(String id) {
+        List<course> courseList=new ArrayList<>();
         for(int i =0;i<courses.size();i++)
             if(courses.get(i).incharge.equals(id))
-                c =  courses.get(i);
+                courseList.add(courses.get(i));
 
-        return c;
+        return courseList;
     }
 
-    public course CoursesInCrew(String id) {
-        course c = null;
+    public List<course> CoursesInCrew(String id) {
+        List<course> courseList=new ArrayList<>();
         for(int i = 0;i<courses.size();i++)
             if(courses.get(i).crew.contains(id))
-                c =  courses.get(i);
-        return c;
+                courseList.add(courses.get(i));
+        return courseList;
     }
 
     public void WriteSyllabus(course courseInCharge,String syllabus) {

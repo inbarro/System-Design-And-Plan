@@ -22,7 +22,7 @@ public class Controller {
         return model.Login(username,password);
     }
 
-    public course CoursesInCharge(user username) {
+    public List<course> CoursesInCharge(user username) {
         return model.CoursesInCharge(username);
     }
 
@@ -34,7 +34,7 @@ public class Controller {
         model.DeleteQuestion(qList.get(question).body);
     }
 
-    public course CoursesInCrew(user user) {
+    public List<course> CoursesInCrew(user user) {
         return model.CoursesInCrew(user);
 
     }

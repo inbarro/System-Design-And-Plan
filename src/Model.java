@@ -36,11 +36,11 @@ public class Model {
 
     }
 
-    public course CoursesInCharge(user username) {
+    public List<course> CoursesInCharge(user username) {
         return CC.CoursesInCharge(username.ID);
     }
 
-    public course CoursesInCrew(user user) {
+    public List<course> CoursesInCrew(user user) {
         return CC.CoursesInCrew(user.ID);
 
     }

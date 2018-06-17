@@ -1,4 +1,11 @@
-import java.util.HashMap;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,58 +15,120 @@ public class View {
     public static final String ANSI_RED = "\033[1;31m";
     public static final String ANSI_RESET = "\u001B[0m";
     public static Scanner reader = new Scanner(System.in);
-
-
+    Stage window;
     Controller c;
-    public void Start() {
+    String username;
+    List<course> courseInCharge;
+    List<course> courseInCrew;
 
-        PrintColor("Please enter your User and password");
-        String username = reader.nextLine(); // Scans the next token of the input as an int.
-        String Password = reader.nextLine();
-        PrintColor(String.format("You have entered %s and %s",username,Password));
-        user user = c.Login(username,Password);
-        if(user!=null) {
-            PrintColor("Welcome " + username);
-            course courseInCharge = c.CoursesInCharge(user);
-            course courseInCrew = c.CoursesInCrew(user);
 
-            if (courseInCharge!=null)
-                System.out.println("You are in charge of " +courseInCharge.name);
-            if (courseInCrew!=null)
-                System.out.println("You are in crew of " +courseInCrew.name);
+    public void Start(Stage primaryStage) {
+        window = primaryStage;
+        window.setTitle("Welcome ! ");
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(8);
+        grid.setHgap(10);
 
-            int option = PrintOptions();
+        Label welcomeLabel =new Label("Login here:");
+        GridPane.setConstraints(welcomeLabel, 0, 0);
+        Label usernameLabel = new Label("Enter user name:");
+        GridPane.setConstraints(usernameLabel, 0, 1);
+        Label passwordLabel = new Label("Enter password:");
+        GridPane.setConstraints(passwordLabel, 0, 2);
+        TextField usernameInput = new TextField();
+        usernameInput.setPromptText("user name here");
+        GridPane.setConstraints(usernameInput, 1, 1);
+        TextField passwordInput = new TextField();
+        passwordInput.setPromptText("password here");
+        GridPane.setConstraints(passwordInput, 1, 2);
+        Button loginbutton = new Button("login");
+        GridPane.setConstraints(loginbutton, 2, 3);
+        loginbutton.setOnAction(e->guiLogin(usernameInput.getText(),passwordInput.getText()));
+        grid.getChildren().addAll(welcomeLabel, usernameLabel,passwordLabel,usernameInput,passwordInput,loginbutton);
+        Scene scene = new Scene(grid, 500, 300);
+        window.setScene(scene);
+        window.show();
+    }
 
-            if(option==1)
-                DeleteQuestionOption(courseInCharge);
-            if(option==2)
-                WriteNoteForQuestion(courseInCrew);
-            if(option==3)
-                WriteSyllabus(courseInCharge);
-            if(option==4)
-                WriteQuestion(courseInCrew);
-
+    private void WriteQuestion(String courseInCrewName)
+    {
+        if(courseInCrewName==null||courseInCrewName.equals(""))
+        {
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Error");
+            alert.setContentText("Please choose a course from the courses you are in their crew");
+            alert.show();
+            return;
         }
-        reader.close();
+        course cCrew=getCourseByName(courseInCrewName,courseInCrew);
+        List<questions> qList = c.seeQuestionsOfCourse(cCrew);
+        List<String> questionBody = new ArrayList<>();
+        for(questions question : qList){
+            questionBody.add(question.body);
+        }
+        ObservableList<String> olist= FXCollections.observableArrayList(questionBody);
+        ListView<String> list2 = new ListView<>(olist);
+
+        Stage questionWindow = new Stage();
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(8);
+        grid.setHgap(10);
+        Label first =new Label("Mivhanet: questions");
+        GridPane.setConstraints(first, 0, 0);
+        Label currentQuestion =new Label("Here are the current course questions");
+        GridPane.setConstraints(currentQuestion, 0, 1);
+        GridPane.setConstraints(list2, 0, 2);
+
+        Label insertQuestion =new Label("Please insert your new question here:");
+        GridPane.setConstraints(insertQuestion, 0, 3);
+        TextField questionInput= new TextField();
+        questionInput.setPromptText("question...");
+        GridPane.setConstraints(questionInput, 0, 4);
+        Button submit = new Button("Submit question");
+        GridPane.setConstraints(submit, 2, 5);
+        submit.setOnAction(e->submitQuestion(cCrew,questionInput.getText(),questionInput));
+        grid.getChildren().addAll(first,insertQuestion,questionInput,submit,list2);
+        questionWindow.setTitle("Insert Question");
+        questionWindow.setMinWidth(250);
+        Scene scene = new Scene(grid, 500, 300);
+        questionWindow.setScene(scene);
+        questionWindow.show();
     }
 
-    private void WriteQuestion(course courseInCrew) {
-        PrintColor("Here are the current course questions");
-        List<questions> qList = c.seeQuestionsOfCourse(courseInCrew);
-        PrintQuestions(qList);
-        System.out.println("Please enter the question -");
-        reader.nextLine();
-        String body = reader.nextLine();
-        c.WriteQuestion(courseInCrew,body);
+    private void WriteSyllabus(String courseInChargeName) {
+        if(courseInChargeName==null||courseInChargeName.equals(""))
+        {
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Error");
+            alert.setContentText("Please choose a course from the courses you are in charge of them");
+            alert.show();
+            return;
+        }
+        course cCrew=getCourseByName(courseInChargeName,courseInCharge);
+        Stage syllabusWindow = new Stage();
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(8);
+        grid.setHgap(10);
+        Label first =new Label("Mivhanet: Syllabus");
+        GridPane.setConstraints(first, 0, 0);
+        Label insertSyllabus =new Label("Please insert your new syllabus here:");
+        GridPane.setConstraints(insertSyllabus, 0, 1);
+        TextField syllabusInput= new TextField();
+        syllabusInput.setPromptText("syllabus...");
+        GridPane.setConstraints(syllabusInput, 0, 2);
+        Button submit = new Button("Submit syllabus");
+        GridPane.setConstraints(submit, 2, 4);
+        submit.setOnAction(e->submitSyllabus(cCrew,syllabusInput.getText(),syllabusInput));
 
-
-    }
-
-    private void WriteSyllabus(course courseInCharge) {
-        PrintColor("Please Enter the Syallbus");
-        reader.nextLine();
-        String syllabus = reader.nextLine();
-        c.WriteSyllabus(courseInCharge,syllabus);
+        grid.getChildren().addAll(first,insertSyllabus,syllabusInput,submit);
+        syllabusWindow.setTitle("Insert syllabus");
+        syllabusWindow.setMinWidth(250);
+        Scene scene = new Scene(grid, 500, 300);
+        syllabusWindow.setScene(scene);
+        syllabusWindow.show();
     }
 
     private void WriteNoteForQuestion(course courseInCrew) {
@@ -130,5 +199,132 @@ public class View {
 
     public void setController(Controller c) {
         this.c = c;
+    }
+
+    private void guiLogin(String uname,String password){
+            if(uname==null ||uname.equals("")||password==null||password.equals(""))
+            {
+                Alert alert= new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Error in login");
+                alert.setContentText("The user name or password you entered is not correct\n please try again");
+                alert.show();
+            }
+            else
+            {
+                user user= c.Login(uname,password);
+                if(user!=null) {
+                    courseInCharge = c.CoursesInCharge(user);
+                    courseInCrew = c.CoursesInCrew(user);
+                    username=uname;
+                    loginView(courseInCharge,courseInCrew);
+                }
+                else
+                {
+                    Alert alert= new Alert(Alert.AlertType.ERROR);
+                    alert.setHeaderText("Error");
+                    alert.setContentText("Please enter a valid user name and password");
+                    alert.show();
+                }
+            }
+    }
+    public void loginView(List<course> charge, List<course> crew){
+        window.close();
+        //VIEW LIST
+        ComboBox<String> courseInCharge= toComboList(charge);
+        ComboBox<String> courseInCrew= toComboList(crew);
+
+        Stage mivanetwindow = new Stage();
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(8);
+        grid.setHgap(10);
+        Label loggedLabel =new Label("Hello:"+username);
+        GridPane.setConstraints(loggedLabel, 0, 0);
+        Label courseincharegLabel=null;
+        Label courseincrewLabel=null;
+        if (charge!=null)
+        {
+            courseincharegLabel =new Label("You are in charge of:");
+            GridPane.setConstraints(courseincharegLabel, 0, 1);
+            GridPane.setConstraints(courseInCharge, 0, 2);
+        }
+        if (crew!=null)
+        {
+            courseincrewLabel=new Label("You are in crew of: ");
+            GridPane.setConstraints(courseincrewLabel, 0, 3);
+            GridPane.setConstraints(courseInCrew, 0, 4);
+        }
+        Button enterSylabus = new Button("Enter new syllabus");
+        GridPane.setConstraints(enterSylabus, 2, 5);
+        Button enterQuestion = new Button("Enter new question");
+        GridPane.setConstraints(enterQuestion, 2, 6);
+        enterQuestion.setOnAction(e->WriteQuestion(courseInCrew.getValue()));
+        enterSylabus.setOnAction(e->WriteSyllabus(courseInCharge.getValue()));
+        grid.getChildren().addAll(loggedLabel,courseincharegLabel,courseincrewLabel,enterSylabus,enterQuestion
+                ,courseInCharge,courseInCrew);
+
+        mivanetwindow.setTitle("Mivanet");
+        mivanetwindow.setMinWidth(250);
+        Scene scene = new Scene(grid, 500, 300);
+        mivanetwindow.setScene(scene);
+        mivanetwindow.show();
+    }
+    private void submitQuestion(course courseInCrew, String question, TextField t)
+    {
+        if(question!=null&&!(question.equals(""))) {
+            c.WriteQuestion(courseInCrew, question);
+            showAlert("question");
+            Stage stage = (Stage) t.getScene().getWindow();
+            stage.close();
+        }
+        else{
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Error");
+            alert.setContentText("Please enter a question");
+            alert.show();
+        }
+
+    }
+    private void submitSyllabus(course courseInCharge, String syllabus, TextField t)
+    {
+        if(syllabus!=null&&!(syllabus.equals(""))) {
+            c.WriteSyllabus(courseInCharge,syllabus);
+            showAlert("syllabus");
+            Stage stage = (Stage) t.getScene().getWindow();
+            stage.close();
+        }
+        else{
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Error");
+            alert.setContentText("Please enter a syllabus");
+            alert.show();
+        }
+
+    }
+    private void showAlert(String text){
+        Alert alert= new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Message");
+        alert.setContentText("You enter the "+text+" successfully");
+        alert.showAndWait();
+    }
+    private ComboBox<String> toComboList(List<course>courses){
+        if(courses==null)
+            return null;
+        List<String> result=new ArrayList<>();
+        for(course course : courses){
+            result.add(course.name);
+        }
+        ObservableList<String> olist= FXCollections.observableArrayList(result);
+        ComboBox<String> listview = new ComboBox<>(olist);
+        return listview;
+    }
+
+    private course getCourseByName(String name,List<course>courses){
+        for(int i=0; i<courses.size();i++)
+        {
+            if(courses.get(i).name.equals(name))
+                return courses.get(i);
+        }
+        return null;
     }
 }
