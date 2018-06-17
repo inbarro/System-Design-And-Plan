@@ -22,7 +22,6 @@ public class View {
     List<course> courseInCrew;
     List<questions> qList;
 
-
     public void Start(Stage primaryStage) {
         window = primaryStage;
         window.setTitle("Welcome ! ");
@@ -174,18 +173,43 @@ public class View {
     }
 
 
-    public void DeleteQuestionOption(course courseInCharge)
+    public void DeleteQuestionOption(String courseInChargeName)
     {
-        PrintColor("You can delete questions from the course " + courseInCharge.name);
-        List<questions> qList = c.seeQuestionsOfCourse(courseInCharge);
-        if (qList.size() > 0) {
-            PrintQuestions(qList);
-            PrintColor("Please enter a Question index to remove");
-            int question = reader.nextInt();
-            c.DeleteQuestion(qList, question - 1);
-        } else {
-            System.out.print("There are no questions");
+        if(courseInChargeName==null||courseInChargeName.equals(""))
+        {
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Error");
+            alert.setContentText("Please choose a course from the courses you are in charge of them");
+            alert.show();
+            return;
         }
+        course cCrew=getCourseByName(courseInChargeName,courseInCharge);
+        Stage noteWindow = new Stage();
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(8);
+        grid.setHgap(10);
+        qList = c.seeQuestionsOfCourse(cCrew);
+        List<String> questionBody = new ArrayList<>();
+        for(questions question : qList){
+            questionBody.add(question.body);
+        }
+        ObservableList<String> olist= FXCollections.observableArrayList(questionBody);
+        ComboBox<String> list2 = new ComboBox<>(olist);
+        Label header= new Label("Please choose a Question to delete:");
+        GridPane.setConstraints(header, 0, 0);
+        GridPane.setConstraints(list2, 0, 1);
+
+        Button delete = new Button("Delete question");
+        GridPane.setConstraints(delete, 1, 3);
+        delete.setOnAction(e->deleteQuestion(list2.getValue(),list2));
+        grid.getChildren().addAll(header,delete,list2);
+        noteWindow.setTitle("Notes");
+        Scene scene = new Scene(grid, 500, 300);
+        scene.getStylesheets().add("Style.css");
+        noteWindow.setScene(scene);
+        noteWindow.show();
+
     }
     private int PrintOptions() {
         PrintColor("Please choose your option -");
@@ -285,11 +309,14 @@ public class View {
         GridPane.setConstraints(enterQuestion, 2, 4);
         Button addNoteQuestion = new Button("Add note to question");
         GridPane.setConstraints(addNoteQuestion, 3, 4);
+        Button deleteQuestion = new Button("Delete question");
+        GridPane.setConstraints(deleteQuestion, 3, 2);
         enterQuestion.setOnAction(e->WriteQuestion(courseInCrew.getValue()));
         addNoteQuestion.setOnAction(e->WriteNoteForQuestion(courseInCrew.getValue()));
         enterSylabus.setOnAction(e->WriteSyllabus(courseInCharge.getValue()));
+        deleteQuestion.setOnAction(e->DeleteQuestionOption(courseInCharge.getValue()));
         grid.getChildren().addAll(loggedLabel,courseincharegLabel,courseincrewLabel,enterSylabus,enterQuestion
-                ,courseInCharge,courseInCrew,addNoteQuestion);
+                ,courseInCharge,courseInCrew,addNoteQuestion,deleteQuestion);
 
         mivanetwindow.setTitle("Mivhanet");
         mivanetwindow.setMinWidth(250);
@@ -380,5 +407,28 @@ public class View {
         stage.close();
 
 
+    }
+    private void deleteQuestion(String que, ComboBox<String> cb){
+        questions questionToDelete=null;
+        for(int i=0; i<qList.size();i++)
+        {
+            if(qList.get(i).body.equals(que))
+                questionToDelete= qList.get(i);
+        }
+        if(questionToDelete==null)
+        {
+            Alert alert= new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Error");
+            alert.setContentText("Please select a question to delete");
+            alert.show();
+            return;
+        }
+        c.DeleteQuestion(questionToDelete);
+        Alert alert= new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Message");
+        alert.setContentText("You have delete the question successfully");
+        alert.showAndWait();
+        Stage stage = (Stage) cb.getScene().getWindow();
+        stage.close();
     }
 }

@@ -30,8 +30,8 @@ public class Controller {
         return model.seeQuestionsOfCourse(course);
     }
 
-    public void DeleteQuestion(List<questions> qList,int question) {
-        model.DeleteQuestion(qList.get(question).body);
+    public void DeleteQuestion(questions question) {
+        model.DeleteQuestion(question.body);
     }
 
     public List<course> CoursesInCrew(user user) {
