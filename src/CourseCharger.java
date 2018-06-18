@@ -51,26 +51,6 @@ public class CourseCharger implements Charger   {
     }
 
 
-    @Override
-    public void saveToDB(String type, Object o) {
-
-    }
-
-    @Override
-    public void deleteFromDB(String type, int ID) {
-
-    }
-
-    @Override
-    public void updateDB(String type, int id, Object New) {
-
-    }
-
-    public String CoursenameToID(String coursename){
-        List<HashMap<String, String>> a = DBUtils.executeQuery(String.format(String.format("Select * from course where name = '%s'; ",coursename)));
-        String id =  a.get(0).get("id");
-        return id;
-    }
 
     public course getCourse(String CourseID){
         for(int i = 0;i<courses.size();i++)

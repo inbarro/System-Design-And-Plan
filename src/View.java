@@ -21,6 +21,7 @@ public class View {
     List<course> courseInCharge;
     List<course> courseInCrew;
     List<questions> qList;
+    ComboBox<String> courseInChargeView,courseInCrewView;
 
     public void Start(Stage primaryStage) {
         window = primaryStage;
@@ -281,8 +282,8 @@ public class View {
     public void loginView(List<course> charge, List<course> crew){
         window.close();
         //VIEW LIST
-        ComboBox<String> courseInCharge= toComboList(charge);
-        ComboBox<String> courseInCrew= toComboList(crew);
+        courseInChargeView= toComboList(charge);
+        courseInCrewView= toComboList(crew);
 
         Stage mivanetwindow = new Stage();
         GridPane grid = new GridPane();
@@ -297,13 +298,13 @@ public class View {
         {
             courseincharegLabel =new Label("You are in charge of:");
             GridPane.setConstraints(courseincharegLabel, 0, 1);
-            GridPane.setConstraints(courseInCharge, 0, 2);
+            GridPane.setConstraints(courseInChargeView, 0, 2);
         }
         if (crew!=null)
         {
             courseincrewLabel=new Label("You are in crew of: ");
             GridPane.setConstraints(courseincrewLabel, 0, 3);
-            GridPane.setConstraints(courseInCrew, 0, 4);
+            GridPane.setConstraints(courseInCrewView, 0, 4);
         }
         Button enterSylabus = new Button("Enter new syllabus");
         GridPane.setConstraints(enterSylabus, 2, 2);
@@ -313,12 +314,12 @@ public class View {
         GridPane.setConstraints(addNoteQuestion, 3, 4);
         Button deleteQuestion = new Button("Delete question");
         GridPane.setConstraints(deleteQuestion, 3, 2);
-        enterQuestion.setOnAction(e->WriteQuestion(courseInCrew.getValue()));
-        addNoteQuestion.setOnAction(e->WriteNoteForQuestion(courseInCrew.getValue()));
-        enterSylabus.setOnAction(e->WriteSyllabus(courseInCharge.getValue()));
-        deleteQuestion.setOnAction(e->DeleteQuestionOption(courseInCharge.getValue()));
+        enterQuestion.setOnAction(e->WriteQuestion(courseInCrewView.getValue()));
+        addNoteQuestion.setOnAction(e->WriteNoteForQuestion(courseInCrewView.getValue()));
+        enterSylabus.setOnAction(e->WriteSyllabus(courseInChargeView.getValue()));
+        deleteQuestion.setOnAction(e->DeleteQuestionOption(courseInChargeView.getValue()));
         grid.getChildren().addAll(loggedLabel,courseincharegLabel,courseincrewLabel,enterSylabus,enterQuestion
-                ,courseInCharge,courseInCrew,addNoteQuestion,deleteQuestion);
+                ,courseInChargeView,courseInCrewView,addNoteQuestion,deleteQuestion);
 
         mivanetwindow.setTitle("Mivhanet");
         mivanetwindow.setMinWidth(250);

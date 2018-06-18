@@ -47,20 +47,6 @@ public class UserCharger implements Charger {
     public void enterIDFromUser (int userID){}
     public void updateDetails(int userID, String newInfo){}
 
-    @Override
-    public void saveToDB(String type, Object o) {
-
-    }
-
-    @Override
-    public void deleteFromDB(String type, int ID) {
-
-    }
-
-    @Override
-    public void updateDB(String type, int id, Object New) {
-
-    }
 
     public String UsernameToID(String username){
         List<HashMap<String, String>> a = DBUtils.executeQuery(String.format(String.format("Select * from users where user_name = '%s'; ",username)));

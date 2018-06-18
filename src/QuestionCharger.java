@@ -42,20 +42,6 @@ public class QuestionCharger implements Charger {
     }
     public void editOptions (int courseID, int OptionID, String newOption){}
 
-    @Override
-    public void saveToDB(String type, Object o) {
-
-    }
-
-    @Override
-    public void deleteFromDB(String type, int ID) {
-
-    }
-
-    @Override
-    public void updateDB(String type, int id, Object New) {
-
-    }
 
     public List<questions> QuestionsOfCourse(questionBank maagar) {
         List<HashMap<String,String>> result =  DBUtils.executeQuery(String.format("Select * from questions where maagarID ='%s';",maagar.id));
