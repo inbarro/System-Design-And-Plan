@@ -1,56 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad02255f-198f-4865-b39b-55fbf49ebebb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/DB_Nituz.db" afterPath="$PROJECT_DIR$/DB_Nituz.db" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/AcionReport.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/AcionReport.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/Charger.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Charger.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/Controller.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Controller.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/CourseCharger.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/CourseCharger.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/CourseManager.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/CourseManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/CourseStaff.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/CourseStaff.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/CourseStaffStatus.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/CourseStaffStatus.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/DBUtils.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/DBUtils.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/Department.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Department.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/EducationAssistant.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/EducationAssistant.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/ErrorReport.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/ErrorReport.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/Main.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/Model.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Model.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/Nituz.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Nituz.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/QuestionCharger.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/QuestionCharger.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/QuestionInTest.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/QuestionInTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/SecretaryPlace.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/SecretaryPlace.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/Test.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/Test.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/TestForm.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/TestForm.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/UserCharger.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/UserCharger.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/View.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/View.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/ab.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/ab.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/answer.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/answer.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/choise.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/choise.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/course.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/course.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/grade.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/grade.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/inter.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/inter.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/lecturer.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/lecturer.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/logger.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/logger.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/loggerActions.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/loggerActions.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/loggerError.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/loggerError.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/note.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/note.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/questionBank.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/questionBank.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/questions.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/questions.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/report.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/report.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/secretary.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/secretary.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/semester.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/semester.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/student.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/student.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/tutor.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/tutor.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/CourseSystem/user.class" afterPath="$PROJECT_DIR$/out/production/CourseSystem/user.class" />
-      <change beforePath="$PROJECT_DIR$/src/Charger.java" afterPath="$PROJECT_DIR$/src/Charger.java" />
-      <change beforePath="$PROJECT_DIR$/src/CourseCharger.java" afterPath="$PROJECT_DIR$/src/CourseCharger.java" />
-      <change beforePath="$PROJECT_DIR$/src/QuestionCharger.java" afterPath="$PROJECT_DIR$/src/QuestionCharger.java" />
-      <change beforePath="$PROJECT_DIR$/src/UserCharger.java" afterPath="$PROJECT_DIR$/src/UserCharger.java" />
-      <change beforePath="$PROJECT_DIR$/src/View.java" afterPath="$PROJECT_DIR$/src/View.java" />
-    </list>
+    <list default="true" id="ad02255f-198f-4865-b39b-55fbf49ebebb" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -100,8 +51,8 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="196" column="40" lean-forward="true" selection-start-line="196" selection-start-column="40" selection-end-line="196" selection-end-column="40" />
               <folding>
                 <element signature="method#Start#0;class#View#0" expanded="false" />
                 <element signature="method#WriteQuestion#0;class#View#0" expanded="false" />
@@ -1012,8 +963,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="196" column="40" lean-forward="true" selection-start-line="196" selection-start-column="40" selection-end-line="196" selection-end-column="40" />
           <folding>
             <element signature="method#Start#0;class#View#0" expanded="false" />
             <element signature="method#WriteQuestion#0;class#View#0" expanded="false" />
